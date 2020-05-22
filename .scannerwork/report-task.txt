@@ -1,6 +1,0 @@
-projectKey=theCompleteWebDeveloperCourse2
-serverUrl=http://localhost:9000
-serverVersion=8.2.0.32929
-dashboardUrl=http://localhost:9000/dashboard?id=theCompleteWebDeveloperCourse2
-ceTaskId=AXFw7i6m1mVzmQLq7YFm
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXFw7i6m1mVzmQLq7YFm
