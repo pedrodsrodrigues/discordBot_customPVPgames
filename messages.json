@@ -1,4 +1,9 @@
 {
+    "unexpectedError": "Unexpected error!",
+
     "error": "Something went wrong!",
-    "unexpectedError": "Unexpected error!"
+
+    "oneMentionError": "Please mention once only!",
+    "argumentsNeededError": "Arguments needed!",
+    "noArgumentsNeededError": "This command doesn't use any argument!"
 }
