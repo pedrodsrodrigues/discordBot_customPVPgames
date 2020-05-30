@@ -10,9 +10,9 @@ module.exports = {
     name: 'randomtext',
     aliases: ['rt'],
     description: 'Random text!',
-    msgArguments: true,
+    msgArguments: 1,
     usage: '<text>',
     execute(message, msgArguments) {
-        return message.reply('Just some random text: ' + msgArguments);
+        return message.channel.send('Just some random text: ' + msgArguments);
     },
 };

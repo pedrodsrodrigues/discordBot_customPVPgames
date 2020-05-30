@@ -48,8 +48,11 @@ client.on('message', message => {
     //     return message.reply('I can\'t execute that command inside DMs!');
     // }
 
+    //* command.msgArguments = 0 -> FALSE
+    //* command.msgArguments = 1 -> TRUE
+    //* command.msgArguments = 2 -> Can be both
     //! If the command needs arguments
-    if (command.msgArguments) {
+    if (command.msgArguments === 1) {
         //! If the user didn't give any arguments
         if (!msgArguments.length) {
             let reply = messages.argumentsNeededError;
@@ -62,12 +65,20 @@ client.on('message', message => {
         }
     }
     //! It the command doesn't need any arguments
-    else {
+    else if (command.msgArguments === 0) {
         //! If the user gave at least one argument
         if (msgArguments.length) {
             return message.channel.send(messages.noArgumentsNeededError);
         }
     }
+    // No need for this to exist
+    // //! It the command can have or not have arguments
+    // else if (command.msgArguments === 2) {
+    //     // ...
+    // } else {
+    //     // It should be impossible to reach this
+    //     return message.channel.send(messages.unexpectedError);
+    // }
 
     //! If there is a command with that name, execute it
     try {

@@ -8,10 +8,9 @@ const messages = require('../messages.json');
 //* ----- BODY of the file -----
 module.exports = {
     name: 'ping',
-    aliases: [],
     description: 'Ping!',
-    msgArguments: false,
+    msgArguments: 0,
     execute(message, msgArguments) {
-        return message.reply('Pong.');
+        return message.channel.send('Pong.');
     },
 };

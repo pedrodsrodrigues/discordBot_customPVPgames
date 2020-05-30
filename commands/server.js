@@ -8,10 +8,9 @@ const messages = require('../messages.json');
 //* ----- BODY of the file -----
 module.exports = {
     name: 'server',
-    aliases: [],
     description: 'Server!',
-    msgArguments: false,
+    msgArguments: 0,
     execute(message, msgArguments) {
-        return message.reply(`${messages.serverName} ${message.guild.name}\n${messages.totalServerNumbers} ${message.guild.memberCount}`);
+        return message.channel.send(`${messages.serverName} ${message.guild.name}\n${messages.totalServerNumbers} ${message.guild.memberCount}`);
     },
 };

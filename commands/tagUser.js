@@ -10,7 +10,7 @@ module.exports = {
     name: 'taguser',
     aliases: ['tu'],
     description: 'Tag user!',
-    msgArguments: true,
+    msgArguments: 1,
     usage: '<mention>',
     execute(message, msgArguments) {
         //! If the user mentioned someone at least once
@@ -18,9 +18,9 @@ module.exports = {
             //* Grab the FIRST mentioned user from the message
             const taggedUser = message.mentions.users.first();
 
-            return message.reply(`${messages.taggedUsersUsername} ${taggedUser.username}`);
+            return message.channel.send(`${messages.taggedUsersUsername} ${taggedUser.username}`);
         } else {
-            return message.channel.send(messages.noMentionsError);
+            return message.reply(messages.noMentionsError);
         }
     },
 };

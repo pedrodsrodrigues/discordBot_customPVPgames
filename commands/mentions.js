@@ -8,9 +8,8 @@ const messages = require('../messages.json');
 //* ----- BODY of the file -----
 module.exports = {
     name: 'mentions',
-    aliases: [],
     description: 'Mentions!',
-    msgArguments: true,
+    msgArguments: 1,
     usage: '<mention>',
     execute(message, msgArguments) {
         //! If the user mentioned someone at least once
@@ -22,7 +21,7 @@ module.exports = {
             // Send the entire array of strings as a message - which, by default, discord.js will '.join()' the array with '\n'
             message.channel.send(mentions);
         } else {
-            return message.channel.send(messages.noMentionsError);
+            return message.reply(messages.noMentionsError);
         }
     },
 };

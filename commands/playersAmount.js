@@ -10,7 +10,7 @@ module.exports = {
     name: 'playersamount',
     aliases: ['pa'],
     description: 'Players amount!',
-    msgArguments: true,
+    msgArguments: 1,
     usage: '<number of players>',
     execute(message, msgArguments) {
         const amount = parseInt(msgArguments[0]);
@@ -20,7 +20,7 @@ module.exports = {
             if (msgArguments[0] === 'undefined') {
                 return message.channel.send(messages.undefinedPlayersNumbers);
             } else {
-                return message.channel.send(messages.notNumber);
+                return message.reply(messages.notNumber);
             }
         } else {
             return message.channel.send(`${messages.playersSet} ` + amount);

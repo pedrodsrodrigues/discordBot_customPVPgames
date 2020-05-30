@@ -10,7 +10,7 @@ module.exports = {
     name: 'userinfo',
     aliases: ['ui'],
     description: 'User info!',
-    msgArguments: false,
+    msgArguments: 0,
     execute(message, msgArguments) {
         return message.reply(`${messages.yourUsername} ${message.author.username}\n${messages.yourID} ${message.author.id}`);
     },
