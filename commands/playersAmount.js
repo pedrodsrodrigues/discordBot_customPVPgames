@@ -9,23 +9,20 @@ const messages = require('../messages.json');
 module.exports = {
     name: 'playersamount',
     description: 'playersAmount!',
+    msgArguments: true,
+    usage: '<number of players>',
     execute(message, msgArguments) {
-        //! If the user sent at least one argument
-        if (msgArguments.length) {
-            const amount = parseInt(msgArguments[0]);
+        const amount = parseInt(msgArguments[0]);
 
-            if (isNaN(amount)) {
-                //! If the first argument is 'undefined'
-                if (msgArguments[0] === 'undefined') {
-                    message.channel.send('Undefined number of players.');
-                } else {
-                    message.channel.send(messages.errorMessage);
-                }
+        if (isNaN(amount)) {
+            //! If the first argument is 'undefined'
+            if (msgArguments[0] === 'undefined') {
+                return message.channel.send(messages.undefinedPlayersNumbers);
             } else {
-                message.channel.send('Number of players set: ' + amount);
+                return message.channel.send(messages.notNumber);
             }
         } else {
-            message.channel.send(messages.argumentsNeededError);
+            return message.channel.send(`${messages.playersSet} ` + amount);
         }
     },
 };

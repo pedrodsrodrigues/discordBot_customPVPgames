@@ -8,12 +8,8 @@ const messages = require('../messages.json');
 module.exports = {
     name: 'ping',
     description: 'Ping!',
+    msgArguments: false,
     execute(message, msgArguments) {
-        //! If the user didn't send any argument
-        if (!msgArguments.length) {
-            message.reply('Pong.');
-        } else {
-            message.channel.send(messages.noArgumentsNeededError);
-        }
+        return message.reply('Pong.');
     },
 };

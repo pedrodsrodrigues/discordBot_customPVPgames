@@ -8,12 +8,8 @@ const messages = require('../messages.json');
 module.exports = {
     name: 'server',
     description: 'Server!',
+    msgArguments: false,
     execute(message, msgArguments) {
-        //! If the user didn't send any argument
-        if (!msgArguments.length) {
-            message.reply(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
-        } else {
-            message.channel.send(messages.noArgumentsNeededError);
-        }
+        return message.reply(`${messages.serverName} ${message.guild.name}\n${messages.totalServerNumbers} ${message.guild.memberCount}`);
     },
 };

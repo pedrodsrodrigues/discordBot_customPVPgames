@@ -8,12 +8,8 @@ const messages = require('../messages.json');
 module.exports = {
     name: 'userinfo',
     description: 'userInfo!',
+    msgArguments: false,
     execute(message, msgArguments) {
-        //! If the user didn't send any argument
-        if (!msgArguments.length) {
-            message.reply(`Your username is: ${message.author.username}\nYour ID: ${message.author.id}`);
-        } else {
-            message.channel.send(messages.noArgumentsNeededError);
-        }
+        return message.reply(`${messages.yourUsername} ${message.author.username}\n${messages.yourID} ${message.author.id}`);
     },
 };

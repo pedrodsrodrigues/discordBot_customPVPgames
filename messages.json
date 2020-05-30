@@ -1,9 +1,20 @@
 {
     "unexpectedError": "Unexpected error!",
-
     "error": "Something went wrong!",
 
     "oneMentionError": "Please mention once only!",
+    "noMentionsError": "Please mention someone!",
     "argumentsNeededError": "Arguments needed!",
-    "noArgumentsNeededError": "This command doesn't use any argument!"
+    "noArgumentsNeededError": "This command doesn't use any argument!",
+
+    "notNumber": "Please insert a valid number!",
+    "correctCommandUsage": "The proper usage would be:",
+    "taggedUsersUsername": "The username of the tagged user is:",
+    "yourUsername": "Your username is:",
+    "yourID": "Your ID:",
+    "serverName": "Server name:",
+    "totalServerNumbers": "Total members:",
+    "": "was mentioned!",
+    "undefinedPlayersNumbers": "Undefined number of players.",
+    "playersSet": "Number of players set:"
 }

@@ -8,22 +8,19 @@ const messages = require('../messages.json');
 module.exports = {
     name: 'mentions',
     description: 'mentions!',
+    msgArguments: true,
+    usage: '<mention>',
     execute(message, msgArguments) {
-        //! If the user sent at least one argument
-        if (msgArguments.length) {
-            //! If the user mentioned someone at least once
-            if (message.mentions.members.first()) {
-                const mentions = message.mentions.users.map(user => {
-                    return `${user.username} was mentioned!`;
-                });
+        //! If the user mentioned someone at least once
+        if (message.mentions.members.first()) {
+            const mentions = message.mentions.users.map(user => {
+                return `${user.username} ${messages.wasMentioned}`;
+            });
 
-                //* Send the entire array of strings as a message - which, by default, discord.js will '.join()' the array with '\n'
-                message.channel.send(mentions);
-            } else {
-                message.channel.send(messages.error);
-            }
+            //* Send the entire array of strings as a message - which, by default, discord.js will '.join()' the array with '\n'
+            message.channel.send(mentions);
         } else {
-            message.channel.send(messages.argumentsNeededError);
+            return message.channel.send(messages.noMentionsError);
         }
     },
 };

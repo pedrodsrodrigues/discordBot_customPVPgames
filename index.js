@@ -45,6 +45,27 @@ client.on('message', message => {
 
     const command = client.commands.get(commandName);
 
+    //! If the command needs arguments
+    if (command.msgArguments) {
+        //! If the user didn't give any arguments
+        if (!msgArguments.length) {
+            let reply = messages.argumentsNeededError;
+
+            if (command.usage) {
+                reply += `\n${messages.correctCommandUsage} \`${prefix}${command.name} ${command.usage}\``;
+            }
+
+            return message.channel.send(reply);
+        }
+    }
+    //! It the command doesn't need any arguments
+    else {
+        //! If the user gave at least one argument
+        if (msgArguments.length) {
+            return message.channel.send(messages.noArgumentsNeededError);
+        }
+    }
+
     //! If there is a command with that name, execute it
     try {
         command.execute(message, msgArguments);

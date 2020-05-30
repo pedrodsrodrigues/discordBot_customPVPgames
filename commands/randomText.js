@@ -8,12 +8,9 @@ const messages = require('../messages.json');
 module.exports = {
     name: 'randomtext',
     description: 'randomText!',
+    msgArguments: true,
+    usage: '<text>',
     execute(message, msgArguments) {
-        //! If the user sent at least one argument
-        if (msgArguments.length) {
-            message.reply('Just some random text: ' + msgArguments);
-        } else {
-            message.channel.send(messages.argumentsNeededError);
-        }
+        return message.reply('Just some random text: ' + msgArguments);
     },
 };

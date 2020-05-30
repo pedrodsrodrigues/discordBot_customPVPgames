@@ -8,12 +8,8 @@ const messages = require('../messages.json');
 module.exports = {
     name: 'beep',
     description: 'Beep',
+    msgArguments: false,
     execute(message, msgArguments) {
-        //! If the user didn't send any argument
-        if (!msgArguments.length) {
-            message.reply('Boop.');
-        } else {
-            message.channel.send(messages.noArgumentsNeededError);
-        }
+        return message.reply('Boop.');
     },
 };
