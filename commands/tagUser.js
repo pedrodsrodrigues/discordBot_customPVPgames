@@ -5,9 +5,11 @@ const fs = require('fs');
 //! Import other files
 const messages = require('../messages.json');
 
+//* ----- BODY of the file -----
 module.exports = {
     name: 'taguser',
-    description: 'tagUser!',
+    aliases: ['tu'],
+    description: 'Tag user!',
     msgArguments: true,
     usage: '<mention>',
     execute(message, msgArguments) {

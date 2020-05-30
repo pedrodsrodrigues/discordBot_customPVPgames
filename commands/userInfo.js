@@ -5,9 +5,11 @@ const fs = require('fs');
 //! Import other files
 const messages = require('../messages.json');
 
+//* ----- BODY of the file -----
 module.exports = {
     name: 'userinfo',
-    description: 'userInfo!',
+    aliases: ['ui'],
+    description: 'User info!',
     msgArguments: false,
     execute(message, msgArguments) {
         return message.reply(`${messages.yourUsername} ${message.author.username}\n${messages.yourID} ${message.author.id}`);

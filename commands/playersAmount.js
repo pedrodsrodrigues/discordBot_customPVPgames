@@ -8,7 +8,8 @@ const messages = require('../messages.json');
 //* ----- BODY of the file -----
 module.exports = {
     name: 'playersamount',
-    description: 'playersAmount!',
+    aliases: ['pa'],
+    description: 'Players amount!',
     msgArguments: true,
     usage: '<number of players>',
     execute(message, msgArguments) {

@@ -5,9 +5,11 @@ const fs = require('fs');
 //! Import other files
 const messages = require('../messages.json');
 
+//* ----- BODY of the file -----
 module.exports = {
     name: 'mentions',
-    description: 'mentions!',
+    aliases: [],
+    description: 'Mentions!',
     msgArguments: true,
     usage: '<mention>',
     execute(message, msgArguments) {
@@ -17,7 +19,7 @@ module.exports = {
                 return `${user.username} ${messages.wasMentioned}`;
             });
 
-            //* Send the entire array of strings as a message - which, by default, discord.js will '.join()' the array with '\n'
+            // Send the entire array of strings as a message - which, by default, discord.js will '.join()' the array with '\n'
             message.channel.send(mentions);
         } else {
             return message.channel.send(messages.noMentionsError);

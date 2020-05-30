@@ -5,9 +5,11 @@ const fs = require('fs');
 //! Import other files
 const messages = require('../messages.json');
 
+//* ----- BODY of the file -----
 module.exports = {
     name: 'randomtext',
-    description: 'randomText!',
+    aliases: ['rt'],
+    description: 'Random text!',
     msgArguments: true,
     usage: '<text>',
     execute(message, msgArguments) {

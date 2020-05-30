@@ -40,10 +40,13 @@ client.on('message', message => {
     // It also puts the command in lower case
     const commandName = msgArguments.shift().toLowerCase();
 
-    //! If there is not a command with that name, exit
-    if (!client.commands.has(commandName)) return;
+    //! If there is not a command (or alias) with that name, exit
+    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    if (!command) return;
 
-    const command = client.commands.get(commandName);
+    // if (command.guildOnly && message.channel.type !== 'text') {
+    //     return message.reply('I can\'t execute that command inside DMs!');
+    // }
 
     //! If the command needs arguments
     if (command.msgArguments) {

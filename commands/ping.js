@@ -5,8 +5,10 @@ const fs = require('fs');
 //! Import other files
 const messages = require('../messages.json');
 
+//* ----- BODY of the file -----
 module.exports = {
     name: 'ping',
+    aliases: [],
     description: 'Ping!',
     msgArguments: false,
     execute(message, msgArguments) {
