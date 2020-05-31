@@ -1,9 +1,9 @@
 //* ----- HEADER of the file -----
 //! Node's native file system module
-const fs = require('fs');
+let fs = require('fs');
 
 //! Import other files
-const messages = require('../messages.json');
+let messages = require('../messages.json');
 
 //* ----- BODY of the file -----
 module.exports = {

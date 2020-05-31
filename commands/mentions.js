@@ -1,9 +1,9 @@
 //* ----- HEADER of the file -----
 //! Node's native file system module
-const fs = require('fs');
+let fs = require('fs');
 
 //! Import other files
-const messages = require('../messages.json');
+let messages = require('../messages.json');
 
 //* ----- BODY of the file -----
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
     execute(message, msgArguments) {
         //! If the user mentioned someone at least once
         if (message.mentions.members.first()) {
-            const mentions = message.mentions.users.map(user => {
+            let mentions = message.mentions.users.map(user => {
                 return `${user.username} ${messages.wasMentioned}`;
             });
 

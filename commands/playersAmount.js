@@ -1,9 +1,9 @@
 //* ----- HEADER of the file -----
 //! Node's native file system module
-const fs = require('fs');
+let fs = require('fs');
 
 //! Import other files
-const messages = require('../messages.json');
+let messages = require('../messages.json');
 
 //* ----- BODY of the file -----
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
     msgArguments: 1,
     usage: '<number of players>',
     execute(message, msgArguments) {
-        const amount = parseInt(msgArguments[0]);
+        let amount = parseInt(msgArguments[0]);
 
         if (isNaN(amount)) {
             //! If the first argument is 'undefined'

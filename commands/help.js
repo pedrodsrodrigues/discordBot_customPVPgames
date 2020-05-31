@@ -1,11 +1,11 @@
 //* ----- HEADER of the file -----
 //! Node's native file system module
-const fs = require('fs');
+let fs = require('fs');
 
 //! Import other files
-const messages = require('../messages.json');
+let messages = require('../messages.json');
 
-const { prefix } = require('../config.json');
+let { prefix } = require('../config.json');
 
 //* ----- BODY of the file -----
 module.exports = {
@@ -14,8 +14,8 @@ module.exports = {
     description: 'Help!',
     msgArguments: 2,
     execute(message, msgArguments) {
-        const data = [];
-        const { commands } = message.client;
+        let data = [];
+        let { commands } = message.client;
 
         //! If the user didn't give any arguments
         if (!msgArguments.length) {
@@ -34,8 +34,8 @@ module.exports = {
                 });
         }
 
-        const name = msgArguments[0].toLowerCase();
-        const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
+        let name = msgArguments[0].toLowerCase();
+        let command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
 
         //! Verifies if the command/alias that the user gave is valid
         if (!command) {

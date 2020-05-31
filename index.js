@@ -1,23 +1,23 @@
 //* ----- HEADER of the file -----
 //! Node's native file system module
-const fs = require('fs');
+let fs = require('fs');
 
 //! Import other files
-const { token, prefix } = require('./config.json');
-const messages = require('./messages.json');
+let { token, prefix } = require('./config.json');
+let messages = require('./messages.json');
 
 //! Require the "discord.js" module and then create a new Discord client
-const Discord = require('discord.js');
-const client = new Discord.Client();
+let Discord = require('discord.js');
+let client = new Discord.Client();
 
 //! Import all the javascript files from the "commands" folder
 // readdirSync() will return an array of all the file names that are on the "commands" folder
 // The filter will make sure that it will only have javascript files
 client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+let commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
+for (let file of commandFiles) {
+    let command = require(`./commands/${file}`);
 
     // Set a new item in the Collection with the key as the command name and the value as the exported module
     client.commands.set(command.name, command);
@@ -35,13 +35,13 @@ client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     // Slices off the prefix and then splits it into an array by spaces
-    const msgArguments = message.content.slice(prefix.length).split(/ +/);
+    let msgArguments = message.content.slice(prefix.length).split(/ +/);
     // Take the first element in the array (which is the command) and return it, while also removing it from the original array
     // It also puts the command in lower case
-    const commandName = msgArguments.shift().toLowerCase();
+    let commandName = msgArguments.shift().toLowerCase();
 
     //! If there is not a command (or alias) with that name, exit
-    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    let command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) return;
 
     // if (command.guildOnly && message.channel.type !== 'text') {

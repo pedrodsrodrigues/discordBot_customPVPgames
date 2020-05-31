@@ -27,5 +27,8 @@
     "commandDescription": "**Description:**",
     "commandUsage": "**Usage:**",
     "youCanSend": "You can send",
-    "specificHelp": "help [command name]` to get info on a specific command!"
+    "specificHelp": "help [command name]` to get info on a specific command!",
+    "command": "Command",
+    "reloaded": "was reloaded!",
+    "commandsReloaded": "All commands were reloaded!"
 }
