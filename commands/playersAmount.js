@@ -10,7 +10,7 @@ module.exports = {
     name: 'playersamount',
     aliases: ['pa'],
     description: 'Players amount!',
-    msgArguments: 1,
+    msgArguments: 'Must have arguments',
     usage: '<number of players>',
     execute(message, msgArguments) {
         let amount = parseInt(msgArguments[0]);

@@ -12,7 +12,7 @@ module.exports = {
     name: 'help',
     aliases: ['h'],
     description: 'Help!',
-    msgArguments: 2,
+    msgArguments: 'Can have arguments',
     execute(message, msgArguments) {
         let data = [];
         let { commands } = message.client;

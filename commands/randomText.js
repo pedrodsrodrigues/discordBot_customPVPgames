@@ -10,7 +10,7 @@ module.exports = {
     name: 'randomtext',
     aliases: ['rt'],
     description: 'Random text!',
-    msgArguments: 1,
+    msgArguments: 'Must have arguments',
     usage: '<text>',
     execute(message, msgArguments) {
         return message.channel.send('Just some random text: ' + msgArguments);

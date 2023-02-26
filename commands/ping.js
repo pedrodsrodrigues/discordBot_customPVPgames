@@ -9,7 +9,7 @@ let messages = require('../messages.json');
 module.exports = {
     name: 'ping',
     description: 'Ping!',
-    msgArguments: 0,
+    msgArguments: 'Must not have arguments',
     execute(message, msgArguments) {
         return message.channel.send('Pong.');
     },

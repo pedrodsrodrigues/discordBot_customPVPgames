@@ -1,3 +1,4 @@
 /.scannerwork
-/Para correr o sonar - 'sonar-scanner' com powershell nesta pasta.txt
+/.idea
+/runSonar_sonar-scanner_inThisFolder.txt
 /config.json

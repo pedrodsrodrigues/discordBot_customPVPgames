@@ -10,7 +10,7 @@ module.exports = {
     name: 'taguser',
     aliases: ['tu'],
     description: 'Tag user!',
-    msgArguments: 1,
+    msgArguments: 'Must have arguments',
     usage: '<mention>',
     execute(message, msgArguments) {
         //! If the user mentioned someone at least once

@@ -9,7 +9,7 @@ let messages = require('../messages.json');
 module.exports = {
     name: 'reload',
     description: 'Reload a command!',
-    msgArguments: 2,
+    msgArguments: 'Can have arguments',
     usage: '<command>',
     execute(message, msgArguments) {
         // TODO: Make this command only usable by me

@@ -9,7 +9,7 @@ let messages = require('../messages.json');
 module.exports = {
     name: 'mentions',
     description: 'Mentions!',
-    msgArguments: 1,
+    msgArguments: 'Must have arguments',
     usage: '<mention>',
     execute(message, msgArguments) {
         //! If the user mentioned someone at least once

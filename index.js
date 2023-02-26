@@ -48,11 +48,15 @@ client.on('message', message => {
     //     return message.reply('I can\'t execute that command inside DMs!');
     // }
 
-    //* command.msgArguments = 0 -> FALSE
-    //* command.msgArguments = 1 -> TRUE
-    //* command.msgArguments = 2 -> Can be both
+    //! It the command doesn't need any arguments
+    if (command.msgArguments === 'Must not have arguments') {
+        //! If the user gave at least one argument
+        if (msgArguments.length) {
+            return message.channel.send(messages.noArgumentsNeededError);
+        }
+    }
     //! If the command needs arguments
-    if (command.msgArguments === 1) {
+    else if (command.msgArguments === 'Must have arguments') {
         //! If the user didn't give any arguments
         if (!msgArguments.length) {
             let reply = messages.argumentsNeededError;
@@ -64,16 +68,9 @@ client.on('message', message => {
             return message.channel.send(reply);
         }
     }
-    //! It the command doesn't need any arguments
-    else if (command.msgArguments === 0) {
-        //! If the user gave at least one argument
-        if (msgArguments.length) {
-            return message.channel.send(messages.noArgumentsNeededError);
-        }
-    }
     // No need for this to exist
     // //! It the command can have or not have arguments
-    // else if (command.msgArguments === 2) {
+    // else if (command.msgArguments === 'Can have arguments') {
     //     // ...
     // } else {
     //     // It should be impossible to reach this
